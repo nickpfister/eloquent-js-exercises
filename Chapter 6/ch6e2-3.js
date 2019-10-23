@@ -15,7 +15,7 @@ class Group {
     return this.values.join(", ");
   }
   static from(iterable) {
-    let g = new Group();
+    let g = new PGroup();
     for (let val of iterable) {
       g.add(val);
     }
@@ -42,7 +42,7 @@ class GroupIterator {
   }
 }
 
-let g = Group.from([1, 2, 3, 3, 4, 5]);
+let g = PGroup.from([1, 2, 3, 3, 4, 5]);
 g.delete(2);
 console.log(g.has(1));
 console.log(String(g));
