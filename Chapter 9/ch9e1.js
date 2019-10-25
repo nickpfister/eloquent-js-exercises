@@ -10,14 +10,18 @@ verify(
   ["ferrum", "transfer A"]
 );
 
-verify(/ious\b/, ["how delicious", "spacious room"], ["ruinous", "consciousness"]);
+verify(
+  /ious\b/,
+  ["how delicious", "spacious room"],
+  ["ruinous", "consciousness"]
+);
 
 verify(/\s[.,:;]/, ["bad punctuation ."], ["escape the period"]);
 
-verify(/\w{1-6}/, ["hottentottententen"], ["no", "hotten totten tenten"]);
+verify(/\w{7}/, ["hottentottententen"], ["no", "hotten totten tenten"]);
 
 verify(
-  /.../,
+  /\b[^e\s]+\b/i,
   ["red platypus", "wobbling nest"],
   ["earth bed", "learning ape", "BEET"]
 );
